@@ -58,7 +58,7 @@
     <form action="https://www.paypal.com/donate" method="post" target="_blank">
       <input type="hidden" name="business" value="santiagogm1002@gmail.com" />
       <input type="hidden" name="no_recurring" value="0" />
-      <input type="hidden" name="item_name" value="Gracias por su ayuda" />
+      <input type="hidden" name="item_name" value="Gracias por su ayuda, el dinero irá destinado a 3D Assets, asi como la contratación de algunos artistas 3D o Animadores" />
       <input type="hidden" name="currency_code" value="USD" />
       <input type="submit" value="Donar con PayPal" style="padding: 10px 20px; font-size: 16px; background-color: #0070ba; color: white; border: none; border-radius: 8px; cursor: pointer;" />
     </form>
