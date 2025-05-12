@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyecto MMORPG</title>
+  <style>
+    body {
+      background-color: #000; /* Fondo negro */
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    select {
+      margin: 20px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+    }
+
+    #content {
+      background-color: #1e1e1e; /* Recuadro gris oscuro */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 800px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .paypal-button {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Proyecto MMORPG</h1>
+
+  <select onchange="changeLanguage(this.value)">
+    <option value="es">Español</option>
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="zh">中文</option>
+    <option value="jp">日本語</option>
+  </select>
+
+  <div id="content"></div>
+
+  <div class="paypal-button">
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+      <input type="hidden" name="business" value="santiagogm1002@gmail.com" />
+      <input type="hidden" name="no_recurring" value="0" />
+      <input type="hidden" name="item_name" value="Gracias por su ayuda" />
+      <input type="hidden" name="currency_code" value="USD" />
+      <input type="submit" value="Donar con PayPal" style="padding: 10px 20px; font-size: 16px; background-color: #0070ba; color: white; border: none; border-radius: 8px; cursor: pointer;" />
+    </form>
+  </div>
+
+  <script>
+    const texts = {
+  es: `Hola, mi nombre es Santiago García, estoy estudiando actualmente en una universidad de mi país (Colombia). Creo esta página más que todo porque necesito recursos para desarrollar un videojuego. Quiero crear un MMORPG diferente, único, que se diferencie de muchos juegos que hay actualmente. Quiero darle al jugador la opción de sentirse libre en un mundo de progreso constante, donde pueda cambiar de cámara 2D a 3D, tener grandes opciones de personalización de personajes, una gran amplitud de razas, mecánicas diferentes, un concepto histórico nuevo y original, y gráficos bonitos.
+
+Mi idea es crear un mundo amplio, donde tengas la opción de jugar solo o poder interactuar con los demás jugadores que se encuentren en el mundo. Soy consciente de que crear un juego no es un trabajo fácil, por eso quiero contratar artistas 3D, gente que tenga experiencia modelando, animando y creando arte, para poder integrarlos a mi equipo. Actualmente somos yo y 3 amigos, todos con experiencia en programación. Participé en un club de Programación orientada a Videojuegos, entonces quiero hacer de esto un proyecto a mediano-largo plazo (planeo tener avances lo más rápido posible).
+
+Ya desarrollé una historia principal, razas, características, bocetos del primer mapa y algunas otras cosas. El dinero irá destinado a Assets, contratación de personas con experiencia, como mencioné anteriormente, y también para poder pagar la universidad. Soy Elo Booster de LOL, pero tristemente no gano mucho, entonces el dinero que puedo destinar a este proyecto es bastante reservado. ¡Espero contar con su ayuda, gracias de antemano! Un solo dólar por persona es suficiente :D`,
+
+  en: `Hello, my name is Santiago García. I am currently studying at a university in my country (Colombia). I created this page mainly because I need resources to develop a video game. I want to create a different, unique MMORPG that stands out from many games available today. I want to give the player the freedom to explore a world of constant progress, where they can switch between 2D and 3D views, have great character customization options, a wide variety of races, different mechanics, a new and original historical concept, and beautiful graphics.
+
+My idea is to create a vast world where you can play solo or interact with other players in the world. I know creating a game is not easy, which is why I want to hire 3D artists and people with experience in modeling, animating, and creating art to join my team. Currently, it’s me and three friends, all with experience in programming. I was part of a club focused on game-oriented programming, so I want this to be a medium-to-long-term project (I plan to make progress as quickly as possible).
+
+I have already developed a main story, races, features, sketches of the first map, and a few other things. The money will go to assets, hiring experienced people as I mentioned, and also to help pay for university. I am an Elo Booster in League of Legends, but unfortunately, I don’t earn much, so the money I can invest in this project is quite limited. I hope I can count on your support. Thank you in advance! One dollar per person is enough :D`,
+
+  fr: `Bonjour, je m'appelle Santiago García. J'étudie actuellement dans une université de mon pays (la Colombie). J'ai créé cette page principalement parce que j'ai besoin de ressources pour développer un jeu vidéo. Je veux créer un MMORPG différent, unique, qui se distingue des nombreux jeux existants aujourd'hui. Je souhaite offrir au joueur la liberté d'explorer un monde en constante évolution, où il peut passer d'une vue 2D à une vue 3D, bénéficier de nombreuses options de personnalisation de personnage, d'une grande diversité de races, de mécaniques différentes, d'un concept historique nouveau et original, et de beaux graphismes.
+
+Mon idée est de créer un monde vaste où vous pouvez jouer en solo ou interagir avec d'autres joueurs dans le monde. Je suis conscient que créer un jeu n’est pas une tâche facile, c’est pourquoi je veux engager des artistes 3D et des personnes ayant de l’expérience en modélisation, animation et création artistique pour intégrer mon équipe. Actuellement, nous sommes moi et trois amis, tous avec de l’expérience en programmation. J’ai participé à un club de programmation orientée vers les jeux vidéo, donc je veux faire de ce projet quelque chose de moyen à long terme (je prévois de progresser le plus rapidement possible).
+
+J’ai déjà développé une histoire principale, des races, des caractéristiques, des croquis de la première carte et quelques autres éléments. L'argent servira à acheter des assets, à engager des personnes expérimentées comme mentionné, et aussi à payer mes études universitaires. Je suis Elo Booster sur LOL, mais malheureusement je ne gagne pas beaucoup, donc mon budget pour ce projet est assez limité. J’espère pouvoir compter sur votre soutien. Merci d’avance ! Un dollar par personne suffit :D`,
+
+  zh: `你好，我叫Santiago García。我目前正在我的国家（哥伦比亚）的一所大学学习。我创建这个页面主要是因为我需要资源来开发一款视频游戏。我想创建一个不同、独特的MMORPG，与目前市场上的许多游戏区别开来。我希望给予玩家在一个不断进步的世界中自由探索的权利，能够在2D和3D视角之间切换，拥有丰富的人物自定义选项、多样的种族、不一样的机制、原创的历史背景和漂亮的图像。
+
+我的想法是创造一个广阔的世界，玩家可以独自游玩，也可以与世界中的其他玩家互动。我知道制作一款游戏并不容易，因此我想雇佣3D艺术家和有建模、动画制作、美术经验的人加入我的团队。目前只有我和3个朋友，我们都有编程经验。我曾是一个专注于游戏开发的编程俱乐部成员，因此我希望这是一个中长期项目（我计划尽快取得进展）。
+
+我已经开发了主线故事、种族、功能、第一张地图的草图和其他一些内容。这笔钱将用于购买素材、聘请有经验的人（如前所述），并用于支付大学学费。我是LOL的Elo提升玩家，但可惜收入不高，因此我可以投入在这个项目上的资金有限。希望能得到您的支持，提前感谢您！每人只需一美元就足够了 :D`,
+
+  jp: `こんにちは、私の名前はサンティアゴ・ガルシアです。現在、私の国（コロンビア）の大学で勉強しています。このページを作成したのは、ゲーム開発のための資金が必要だからです。私は、現在の多くのゲームとは異なる、ユニークで自由度の高いMMORPGを作りたいと思っています。プレイヤーが2Dと3Dのカメラを切り替えながら、広いカスタマイズ、豊富な種族、独自のメカニクス、そして新しくオリジナルな歴史的コンセプトを持つ美しい世界を自由に冒険できるゲームを目指しています。
+
+私のアイデアは、ソロでも他のプレイヤーと交流しながらでも遊べる広大な世界を作ることです。ゲーム開発が簡単なことではないと理解しているので、3Dアーティストや、モデリング・アニメーション・アート制作の経験がある人々をチームに加えたいと考えています。現在、私と友人3人のチームで、全員がプログラミングの経験があります。私はゲーム開発を中心としたプログラミングクラブに参加していたことがあり、このプロジェクトを中長期的なものとして進めていきたいと思っています（できるだけ早く進展させたいです）。
+
+すでにメインストーリー、種族、特徴、最初のマップのスケッチなどを作成済みです。この資金は、アセット購入や経験豊富な人材の雇用、そして大学の学費にも使われます。私はLOLのエロブースターとして働いていますが、収入は多くなく、このプロジェクトに充てられる資金は限られています。皆様のご支援をいただければ幸いです。どうぞよろしくお願いいたします！1人あたり1ドルで十分です :D`
+};
+
+
+    function changeLanguage(lang) {
+      document.getElementById("content").textContent = texts[lang];
+    }
+
+    // Idioma por defecto
+    changeLanguage("es");
+  </script>
+</body>
+</html>
